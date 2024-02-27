@@ -3,6 +3,12 @@ import { Button, Card, Col } from "react-bootstrap";
 const Programmer = ({ programmer, handleHiring }) => {
     const { img, name, handle, rating, contribution, salary } = programmer;
 
+    const btnStyles = {
+        backgroundColor: "#E9E9E9",
+        color: "black",
+        border: "0",
+    };
+
     return (
         <Col>
             <Card className="p-3 shadow-sm">
@@ -30,8 +36,9 @@ const Programmer = ({ programmer, handleHiring }) => {
                     <Button
                         onClick={() => handleHiring(programmer)}
                         className="w-100"
+                        style={btnStyles}
                     >
-                        Hire
+                        <i className="fa-regular fa-user"></i> Hire
                     </Button>
                 </Card.Body>
             </Card>
