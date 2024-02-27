@@ -1,15 +1,13 @@
 import { Container } from "react-bootstrap";
 import "./App.css";
+import Header from "./components/Header/Header";
+import Main from "./components/Main/Main";
 
 function App() {
     return (
         <Container className="poppins-regular">
-            <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque
-                rerum enim dolorem eius possimus dolorum. Ea blanditiis rem,
-                sed, necessitatibus commodi dignissimos quisquam error cumque
-                pariatur, corporis sapiente veniam iure!
-            </p>
+            <Header></Header>
+            <Main></Main>
         </Container>
     );
 }
