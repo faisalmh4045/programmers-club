@@ -36,7 +36,12 @@ const Main = () => {
                 <Col lg={9}>
                     <Programmers handleHiring={handleHiring}></Programmers>
                 </Col>
-                <Col lg={3}>
+                <Col
+                    xs={{ order: "first" }}
+                    md={{ order: "last" }}
+                    lg={3}
+                    className="mb-3 mt-md-3 mt-lg-0"
+                >
                     <Hired
                         hiredCoders={hiredCoders}
                         handleRemove={handleRemove}

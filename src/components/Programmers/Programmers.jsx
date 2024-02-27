@@ -12,7 +12,7 @@ const Programmers = ({ handleHiring }) => {
     }, []);
 
     return (
-        <Row lg={3} className="g-4">
+        <Row xs={1} md={2} lg={3} className="g-4">
             {programmers.map((programmer, idx) => (
                 <Programmer
                     key={idx}
