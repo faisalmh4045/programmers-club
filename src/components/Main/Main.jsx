@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Hired from "../Hired/Hired";
 import Programmers from "../Programmers/Programmers";
+import { Col, Row } from "react-bootstrap";
 
 const Main = () => {
     const [hiredCoders, setHiredCoders] = useState([]);
@@ -30,13 +31,19 @@ const Main = () => {
     };
 
     return (
-        <main className="d-flex">
-            <Programmers handleHiring={handleHiring}></Programmers>
-            <Hired
-                hiredCoders={hiredCoders}
-                handleRemove={handleRemove}
-                budgetRemaining={budgetRemaining}
-            ></Hired>
+        <main className="mt-4">
+            <Row>
+                <Col lg={9}>
+                    <Programmers handleHiring={handleHiring}></Programmers>
+                </Col>
+                <Col lg={3}>
+                    <Hired
+                        hiredCoders={hiredCoders}
+                        handleRemove={handleRemove}
+                        budgetRemaining={budgetRemaining}
+                    ></Hired>
+                </Col>
+            </Row>
         </main>
     );
 };
