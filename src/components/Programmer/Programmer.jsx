@@ -3,6 +3,7 @@ import { Button, Card, Col } from "react-bootstrap";
 const Programmer = ({ programmer, handleHiring }) => {
     const { img, name, handle, rating, contribution, salary } = programmer;
 
+    // styles for hire button
     const btnStyles = {
         backgroundColor: "#E9E9E9",
         color: "black",

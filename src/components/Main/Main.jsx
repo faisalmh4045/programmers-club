@@ -9,6 +9,7 @@ const Main = () => {
     const [budgetRemaining, setBudgetRemaining] = useState(1000000);
     const [show, setShow] = useState(false);
 
+    // Update budgetRemaining whenever hiredCoders change
     useEffect(() => {
         setBudgetRemaining(
             1000000 -
@@ -16,6 +17,7 @@ const Main = () => {
         );
     }, [hiredCoders]);
 
+    // Handle hiring a programmer
     const handleHiring = (programmer) => {
         const alreadyHired = hiredCoders.find(
             (coder) => coder.id === programmer.id
@@ -27,6 +29,7 @@ const Main = () => {
         } else setShow(true);
     };
 
+    // Handle removing a hired programmer
     const handleRemove = (programmer) => {
         const rem = hiredCoders.filter((coder) => coder.id !== programmer.id);
         setHiredCoders(rem);
