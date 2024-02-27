@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import Hired from "../Hired/Hired";
 import Programmers from "../Programmers/Programmers";
+import AlertMessage from "../AlertMessage/AlertMessage";
 import { Col, Row } from "react-bootstrap";
 
 const Main = () => {
     const [hiredCoders, setHiredCoders] = useState([]);
     const [budgetRemaining, setBudgetRemaining] = useState(1000000);
+    const [show, setShow] = useState(false);
 
     useEffect(() => {
         setBudgetRemaining(
@@ -22,7 +24,7 @@ const Main = () => {
 
         if (!alreadyHired && budgetLeft >= 0) {
             setHiredCoders([...hiredCoders, programmer]);
-        } else alert("already hired / insufficient budget");
+        } else setShow(true);
     };
 
     const handleRemove = (programmer) => {
@@ -47,6 +49,7 @@ const Main = () => {
                         handleRemove={handleRemove}
                         budgetRemaining={budgetRemaining}
                     ></Hired>
+                    <AlertMessage show={show} setShow={setShow}></AlertMessage>
                 </Col>
             </Row>
         </main>
